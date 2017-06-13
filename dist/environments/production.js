@@ -18,12 +18,18 @@ const cssLoader = {
 };
 const sassLoaders = {
     fallback: 'style-loader',
-    use: [cssLoader, {
+    use: [
+        cssLoader,
+        {
             loader: 'postcss-loader',
             options: {
-                config: path.join(__dirname, './config-files/postcss.config')
+                config: {
+                    path: path.join(__dirname, '../config-files/postcss.config')
+                }
             }
-        }, 'sass-loader']
+        },
+        'sass-loader'
+    ]
 };
 function productionConfig(config) {
     config.module.rules = config.module.rules.filter(rule => {

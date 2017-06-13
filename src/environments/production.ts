@@ -26,7 +26,9 @@ const sassLoaders = {
     {
       loader: 'postcss-loader',
       options: {
-        config: path.join(__dirname, './config-files/postcss.config')
+        config: {
+          path: path.join(__dirname, '../config-files/postcss.config')
+        }
       }
     },
     'sass-loader'

@@ -1,8 +1,11 @@
 import * as webpack from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-
 import * as assign from 'webpack-config-assign';
+import * as omit from 'object.omit';
+
 import * as path from 'path';
+import * as fs from 'fs';
+
 
 import getConfig from './util/get-config';
 
@@ -15,23 +18,27 @@ const getUrlLoader = (environment, options) => {
   ];
 };
 
+const hasFile = name => {
+  return fs.existsSync(path.resolve(name));
+}
+
 export function getWebpackConfig(...extendConfigs) {
   return function config({ environment = 'production' } = {}) {
     const urlLoader = getUrlLoader.bind(undefined, environment);
     return assign(
       {
-        entry: {
-          bundle: path.join(__dirname, 'src/index'),
-          polyfills: path.join(__dirname, 'src/polyfills')
-        },
+        entry: omit({
+          bundle: path.resolve('src/index'),
+          polyfills: path.resolve('src/polyfills')
+        }, (filePath, key) => hasFile(`${filePath}.js`)),
         output: {
-          path: path.join(__dirname, 'dist'),
+          path: path.resolve('dist'),
           filename: '[name].js',
           publicPath: '/'
         },
         resolve: {
           alias: {
-            static: path.join(__dirname, 'static')
+            static: path.resolve('static')
           }
         },
         module: {
@@ -39,7 +46,7 @@ export function getWebpackConfig(...extendConfigs) {
             {
               test: /\.js$/,
               use: 'babel-loader',
-              include: path.join(__dirname, 'src')
+              include: path.resolve('src')
             },
             {
               test: /\.css$/,
@@ -58,10 +65,12 @@ export function getWebpackConfig(...extendConfigs) {
                 {
                   loader: 'postcss-loader',
                   options: {
-                    config: path.join(
-                      __dirname,
-                      './config-files/postcss.config'
-                    )
+                    config: {
+                      path: path.join(
+                        __dirname,
+                        './config-files/postcss.config'
+                      )
+                    }
                   }
                 },
                 'sass-loader'
@@ -77,7 +86,7 @@ export function getWebpackConfig(...extendConfigs) {
                 limit: 2500,
                 name: './assets/images/[name].[hash].[ext]'
               }),
-              include: path.join(__dirname, 'static')
+              include: path.resolve('static')
             },
             {
               test: /\.woff2?$/,
@@ -111,12 +120,12 @@ export function getWebpackConfig(...extendConfigs) {
                 mimetype: 'image/svg+xml',
                 name: './assets/fonts/[hash].[ext]'
               }),
-              include: [path.join(__dirname, 'src/assets/web-font')]
+              include: [path.resolve('src/assets/web-font')]
             },
             {
               test: /manifest\.json$/,
               use: 'file-loader',
-              include: [path.join(__dirname, 'static')]
+              include: [path.resolve('static')]
             }
           ]
         },

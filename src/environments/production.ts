@@ -21,12 +21,16 @@ const cssLoader = {
 
 const sassLoaders = {
   fallback: 'style-loader',
-  use: [cssLoader, {
-    loader: 'postcss-loader',
-    options: {
-      config: path.join(__dirname, './config-files/postcss.config')
-    }
-  }, 'sass-loader']
+  use: [
+    cssLoader,
+    {
+      loader: 'postcss-loader',
+      options: {
+        config: path.join(__dirname, './config-files/postcss.config')
+      }
+    },
+    'sass-loader'
+  ]
 };
 
 export default function productionConfig(config) {

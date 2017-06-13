@@ -44,6 +44,8 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
+      "prettier --write --single-quote --parser typescript",
+      "git add"
     ]
   }
 }

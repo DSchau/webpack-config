@@ -58,7 +58,10 @@ export function getWebpackConfig(...extendConfigs) {
                 {
                   loader: 'postcss-loader',
                   options: {
-                    config: path.join(__dirname, './config-files/postcss.config')
+                    config: path.join(
+                      __dirname,
+                      './config-files/postcss.config'
+                    )
                   }
                 },
                 'sass-loader'

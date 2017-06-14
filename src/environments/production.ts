@@ -35,8 +35,8 @@ const sassLoaders = {
   ]
 };
 
-export default function productionConfig(config) {
-  config.module.rules = config.module.rules.filter(rule => {
+export function config(existingConfig) {
+  existingConfig.module.rules = existingConfig.module.rules.filter(rule => {
     if (rule.test.test) {
       return !rule.test.test('.css') && !rule.test.test('.scss');
     }

@@ -31,8 +31,8 @@ const sassLoaders = {
         'sass-loader'
     ]
 };
-function productionConfig(config) {
-    config.module.rules = config.module.rules.filter(rule => {
+function config(existingConfig) {
+    existingConfig.module.rules = existingConfig.module.rules.filter(rule => {
         if (rule.test.test) {
             return !rule.test.test('.css') && !rule.test.test('.scss');
         }
@@ -101,4 +101,4 @@ function productionConfig(config) {
         ]
     };
 }
-exports.default = productionConfig;
+exports.config = config;

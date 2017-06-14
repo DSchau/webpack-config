@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const path = require("path");
 function getConfig(env) {
     try {
-        return require(path.resolve(__dirname, '../environments/${env}'));
+        return require(path.resolve(__dirname, `../environments/${env}`)).config;
     }
     catch (e) {
         return {};

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function developmentConfig() {
+function config() {
     return {
         devtool: 'cheap-module-eval-source-map',
         devServer: {
@@ -9,4 +9,4 @@ function developmentConfig() {
         }
     };
 }
-exports.default = developmentConfig;
+exports.config = config;

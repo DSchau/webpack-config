@@ -1,5 +1,7 @@
 # dschau-webpack-config
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DSchau/webpack-config.svg)](https://greenkeeper.io/)
+
 The extendable webpack config for my [personal website][website]
 
 ## Features

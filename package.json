@@ -10,7 +10,8 @@
     "predeploy": "npm run build",
     "deploy": "bump-version & cp .gitignore dist/ & cp .npmignore dist/",
     "clean": "del-cli \"dist/**/*\"",
-    "prettier": "prettier --write --single-quote --parser typescript \"src/**/*.ts\""
+    "prettier": "prettier --write --single-quote --parser typescript \"src/**/*.ts\"",
+    "test": "echo \"Should write some tests\""
   },
   "dependencies": {
     "autoprefixer": "~7.1.1",

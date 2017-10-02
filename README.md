@@ -1,4 +1,4 @@
-# dschau-webpack-config
+# @dschau/webpack-config
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/DSchau/webpack-config.svg)](https://greenkeeper.io/)
 

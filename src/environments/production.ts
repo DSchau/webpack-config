@@ -46,7 +46,7 @@ export function config(existingConfig) {
   return {
     devtool: 'source-map',
     entry: {
-      vendor: ['autosize', 'ityped', 'particles.js']
+      vendor: ['autosize', 'ityped', '@dschau/particles.js']
     },
     output: {
       filename: 'scripts/[name].[chunkhash].js',

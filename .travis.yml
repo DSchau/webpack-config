@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - stable
+
+cache:
+  yarn: true
+
+before_install: yarn global add greenkeeper-lockfile@1
+install: yarn
+
+before_script: greenkeeper-lockfile-update
+script: yarn test
+after_script: greenkeeper-lockfile-upload
+
+before_deploy:
+  - yarn deploy
+  - cd dist
+deploy:
+  provider: npm
+  email: dustinschau@gmail.com
+  api_key: $NPM_API_KEY
+  skip_cleanup: true
+  on:
+    tags: true
+after_deploy:
+  - cd ../

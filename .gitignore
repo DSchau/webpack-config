@@ -4,3 +4,6 @@ node_modules/
 # misc files
 .DS_Store
 *.log
+
+# built files
+dist/

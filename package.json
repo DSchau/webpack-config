@@ -1,13 +1,15 @@
 {
-  "name": "webpack-config",
-  "version": "1.0.0",
-  "main": "./dist/index",
+  "name": "@dschau/webpack-config",
+  "version": "0.0.1",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "precommit": "lint-staged",
     "prebuild": "npm run clean",
     "build": "tsc",
+    "predeploy": "npm run build",
+    "deploy": "bump-version & cp .gitignore dist/ & cp .npmignore dist/",
     "clean": "del-cli \"dist/**/*\"",
-    "precommit": "lint-staged",
     "prettier": "prettier --write --single-quote --parser typescript \"src/**/*.ts\""
   },
   "dependencies": {
@@ -37,6 +39,7 @@
     "webpack-config-assign": "~1.0.0"
   },
   "devDependencies": {
+    "@dschau/bump-version-ci": "^1.0.2",
     "@types/node": "~7.0.31",
     "del-cli": "~1.0.0",
     "husky": "~0.13.4",
@@ -49,5 +52,8 @@
       "prettier --write --single-quote --parser typescript",
       "git add"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

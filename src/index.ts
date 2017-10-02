@@ -6,7 +6,6 @@ import * as omit from 'object.omit';
 import * as path from 'path';
 import * as fs from 'fs';
 
-
 import getConfig from './util/get-config';
 
 const getUrlLoader = (environment, options) => {

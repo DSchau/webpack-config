@@ -44,7 +44,7 @@
     "@types/node": "~8.0.31",
     "del-cli": "~1.1.0",
     "husky": "~0.14.3",
-    "lint-staged": "~4.2.3",
+    "lint-staged": "~4.3.0",
     "prettier": "~1.7.3",
     "typescript": "~2.5.3"
   },

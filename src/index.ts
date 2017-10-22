@@ -80,7 +80,7 @@ export function getWebpackConfig(...extendConfigs) {
               use: ['pug-loader']
             },
             {
-              test: /\.jpe?g|png|gif|webp$/,
+              test: /\.jpe?g|png|gif|webp|svg$/,
               use: urlLoader({
                 limit: 2500,
                 name: './assets/images/[name].[hash].[ext]'

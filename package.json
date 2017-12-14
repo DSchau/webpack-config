@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@dschau/bump-version-ci": "^1.0.2",
-    "@types/node": "~8.0.31",
+    "@types/node": "~8.5.1",
     "del-cli": "~1.1.0",
     "husky": "~0.14.3",
     "lint-staged": "~4.2.3",

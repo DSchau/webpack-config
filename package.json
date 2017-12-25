@@ -27,7 +27,7 @@
     "name-all-modules-plugin": "~1.0.1",
     "node-sass": "~4.5.3",
     "object.omit": "~3.0.0",
-    "offline-plugin": "~4.8.1",
+    "offline-plugin": "~4.9.0",
     "postcss": "~6.0.2",
     "postcss-loader": "~2.0.5",
     "pug": "~2.0.0-rc.2",

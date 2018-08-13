@@ -3,14 +3,14 @@ const env = process.env.NODE_ENV;
 module.exports = {
   presets: [
     [
-      'env',
+      "env",
       {
         targets: {
-          browsers: ['last 2 versions', 'safari >= 7']
+          browsers: [">0.25%", "not ie 11", "not op_mini all"]
         },
-        modules: env === 'test' ? 'commonjs' : false
+        modules: env === "test" ? "commonjs" : false
       }
     ]
   ],
-  plugins: ['syntax-dynamic-import']
+  plugins: ["syntax-dynamic-import"]
 };

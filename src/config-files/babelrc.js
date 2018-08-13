@@ -6,7 +6,7 @@ module.exports = {
       "env",
       {
         targets: {
-          browsers: [">0.25%", "not ie 11", "not op_mini all"]
+          browsers: [">0.25%", "not ie 11", "not op_mini all"] // https://jamie.build/last-2-versions
         },
         modules: env === "test" ? "commonjs" : false
       }
